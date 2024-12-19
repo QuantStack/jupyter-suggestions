@@ -11,11 +11,12 @@ module.exports = {
     timeout: 120 * 1000,
     reuseExistingServer: false
   },
-  retries: 1,
+  retries: 0,
   use: {
     ...baseConfig.use,
     trace: 'off',
-
+    video: 'retain-on-failure',
+    viewport: { width: 1920, height: 1080 },
   },
   expect: {
     toMatchSnapshot: {
